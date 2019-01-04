@@ -1,7 +1,8 @@
 {
   "name": "wbr-youtube-player",
+  "author": "William Roberts <willbarronroberts@gmail.com>",
   "version": "0.0.2",
-  "description": "Stencil Component Starter",
+  "description": "A YouTube iFrame web component that makes it more simple to integrate the iFrame into your app",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "unpkg": "dist/ionic.js",
@@ -18,6 +19,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^10.12.18",
     "@stencil/core": "~0.15.2"
   },
   "license": "MIT"

@@ -13,12 +13,14 @@ import '@stencil/core';
 export namespace Components {
 
   interface YoutubePlayer {
-    'apiKey': string;
     'id': string;
+    'key': string;
+    'size': string;
   }
   interface YoutubePlayerAttributes extends StencilHTMLAttributes {
-    'apiKey'?: string;
     'id'?: string;
+    'key'?: string;
+    'size'?: string;
   }
 }
 
