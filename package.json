@@ -1,6 +1,6 @@
 {
   "name": "wbr-youtube-player",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -16,17 +16,9 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "dependencies": {
-    "@stencil/router": "^0.3.1",
-    "@types/gapi": "0.0.36",
-    "@types/youtube": "0.0.35",
-    "gapi-client": "0.0.3",
-    "googleapis": "^36.0.0",
-    "yt-player": "^3.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "~0.15.2",
-    "@types/node": "^10.12.18"
+    "@stencil/core": "~0.15.2"
   },
   "license": "MIT"
 }

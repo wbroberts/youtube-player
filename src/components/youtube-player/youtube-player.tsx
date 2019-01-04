@@ -1,4 +1,4 @@
-import { Component, Prop, State, Element, Method } from '@stencil/core';
+import { Component, Prop, State, Element } from '@stencil/core';
 
 import { Video } from '../../models/video.model';
 import { EnvVar } from '../../env/env.variables';
@@ -24,7 +24,7 @@ export class PlayerContainer {
   };
 
   // Props
-  @Prop() apiKey: string = EnvVar.YT_KEY;
+  @Prop() apiKey: string;
   @Prop() id: string;
 
   // Lifecycle
@@ -80,8 +80,7 @@ export class PlayerContainer {
     };
     document.body.appendChild(script);
   }
-  @Method()
-  playVideo() {
+  private playVideo() {
     this.initYT();
   }
 

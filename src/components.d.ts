@@ -15,7 +15,6 @@ export namespace Components {
   interface YoutubePlayer {
     'apiKey': string;
     'id': string;
-    'playVideo': () => void;
   }
   interface YoutubePlayerAttributes extends StencilHTMLAttributes {
     'apiKey'?: string;
