@@ -1,0 +1,22 @@
+.card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  max-width: 320px;
+  max-height: 180px;
+}
+
+.card h2 {
+  position: absolute;
+}
+
+img {
+  max-height: 180px;
+  max-width: 320px;
+}
+
+#player {
+  position: absolute;
+}
