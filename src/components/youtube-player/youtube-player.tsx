@@ -32,13 +32,13 @@ export class PlayerContainer {
 
   // Lifecycle
   componentWillLoad() {
-    console.log(this.key);
     if (this.key) {
       this.fetchVideoData(this.id);
     } else {
       setTimeout(() => this.fetchVideoData(this.id), 100);
     }
   }
+
   componentDidLoad() {
     this.createYTPlayerDiv();
   }
@@ -49,6 +49,7 @@ export class PlayerContainer {
     this.player.id = 'player';
     this.el.shadowRoot.querySelector('.card').appendChild(this.player);
   }
+
   private async fetchVideoData(videoId: string): Promise<void> {
     this.isLoading = true;
 
@@ -57,20 +58,21 @@ export class PlayerContainer {
       .then(res => {
         this.isLoading = false;
         const vid = res.items[0].snippet;
-        console.log(res);
+
         this.video.img = vid.thumbnails[this.size].url;
-        this.height = vid.thumbnails[this.size].width;
-        this.width = vid.thumbnails[this.size].height;
+        this.height = vid.thumbnails[this.size].height;
+        this.width = vid.thumbnails[this.size].width;
         this.video.title = vid.title;
       })
       .catch(e => console.log(e));
   }
+
   private iFramePlayer(): void {
     window['onYouTubeIframeAPIReady'] = () => {
       new window['YT'].Player(this.player, {
         videoId: this.id,
-        width: this.width,
-        height: this.height,
+        width: this.width.toString(),
+        height: this.height.toString(),
         events: {
           onError: () => console.log('Error'),
           onReady: e => {
@@ -80,6 +82,7 @@ export class PlayerContainer {
       });
     };
   }
+
   private initYT(): void {
     const script = document.createElement('script');
     script.src = 'https://www.youtube.com/iframe_api';
@@ -88,6 +91,7 @@ export class PlayerContainer {
     };
     document.body.appendChild(script);
   }
+
   private playVideo(): void {
     this.initYT();
   }
